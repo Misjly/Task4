@@ -1,8 +1,8 @@
 ﻿using Task4.BL.Custom.DataContext;
 using Task4.BL.Custom.DataSourceProviders;
 using System.Data.Entity;
-using Task4.BL.Strategies;
 using Task4.BL.Custom;
+using Task4.Domain.Strategies;
 
 namespace Task4.ConsoleClient
 {

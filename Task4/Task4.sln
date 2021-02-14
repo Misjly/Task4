@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.ConsoleClient", "Task4.ConsoleClient.csproj", "{B3AAA707-EB8B-42CB-8524-9E877EA7DAC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.ConsoleClient", "Task4.ConsoleClient\Task4.ConsoleClient.csproj", "{B3AAA707-EB8B-42CB-8524-9E877EA7DAC8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.BL.Custom", "..\Task4.BL.Custom\Task4.BL.Custom.csproj", "{C48BA01A-D369-4782-828E-7A9FEEF628D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.BL.Custom", "Task4.BL.Custom\Task4.BL.Custom.csproj", "{C48BA01A-D369-4782-828E-7A9FEEF628D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.Model", "..\Model\Task4.Model.csproj", "{70BD45EC-013A-4A4C-8CF6-907C6A9555D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.Model", "Task4.Model\Task4.Model.csproj", "{70BD45EC-013A-4A4C-8CF6-907C6A9555D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.DAL", "..\Task4.DAL\Task4.DAL.csproj", "{F53B6825-488C-4483-885E-B6F6D38F5788}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.DAL", "Task4.DAL\Task4.DAL.csproj", "{F53B6825-488C-4483-885E-B6F6D38F5788}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.Domain", "..\Task4.Domain\Task4.Domain.csproj", "{DFF617CD-59F9-4E4B-8182-F0982BB537A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.Domain", "Task4.Domain\Task4.Domain.csproj", "{DFF617CD-59F9-4E4B-8182-F0982BB537A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.Infrastructure", "..\Task4.Infrastructure\Task4.Infrastructure.csproj", "{7886BB74-1EA8-4376-B398-CD9C59139FDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.Infrastructure", "Task4.Infrastructure\Task4.Infrastructure.csproj", "{7886BB74-1EA8-4376-B398-CD9C59139FDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
