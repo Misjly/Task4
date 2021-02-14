@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Task4.Model.Models
+namespace Task4.DAL.Models
 {
     public class Sale
     {
@@ -8,7 +8,7 @@ namespace Task4.Model.Models
         public DateTime Date { get; set; }
         public string Client { get; set; }
         public string Product { get; set; }
-        public int Cost { get; set; }
+        public decimal Cost { get; set; }
         public virtual Manager Manager { get; set; }
         public Guid? Session { get; set; }
     }

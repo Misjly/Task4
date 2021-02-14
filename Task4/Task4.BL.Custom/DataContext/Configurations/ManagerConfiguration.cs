@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using Task4.Model.Models;
+using Task4.DAL.Models;
 
 namespace Task4.BL.Custom.DataContext.Configurations
 {

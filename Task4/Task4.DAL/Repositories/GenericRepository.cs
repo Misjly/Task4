@@ -13,12 +13,13 @@ namespace Task4.DAL.Repositories
 
         public GenericRepository(DbContext context)
         {
-            this.Context = context;
-            this.EntitySet = context.Set<TEntity>();
+            Context = context;
+            EntitySet = context.Set<TEntity>();
         }
         public void Add(TEntity entity)
         {
-            if (entity == null) throw new ArgumentNullException("entity");
+            if (entity == null)
+                throw new ArgumentNullException("entity");
             EntitySet.Add(entity);
         }
 

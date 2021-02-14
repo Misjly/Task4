@@ -4,7 +4,7 @@ using Task4.Domain.Strategies;
 using Task4.Domain.Transactions;
 using Task4.DAL.Contexts;
 using Task4.DAL.Repositories.Factories;
-using Task4.Model.Models;
+using Task4.DAL.Models;
 using System;
 using System.Data.Entity;
 
@@ -46,8 +46,8 @@ namespace Task4.BL.Custom
         public void OnDataItemHandler(CustomLogicTaskContext taskContext)
         {
             DbContext context = ContextFactory.CreateInstance();
-            //try
-            //{
+            try
+            {
                 context.Database.Connection.Open();
                 var managerRepository = RepositoryFactory.CreateInstance<Manager>(context);
 
@@ -61,12 +61,12 @@ namespace Task4.BL.Custom
                         };
                     unitOfWork.Execute();
                 }
-                manager = managerRepository.SingleOrDefault(x => x.SecondName == taskContext.DataItem.Client);
+                manager = managerRepository.SingleOrDefault(x => x.SecondName == taskContext.DataItem.SecondName);
 
                 var saleRepository = RepositoryFactory.CreateInstance<Sale>(context);
                 var sale = new Sale()
                 {
-                    //Id = manager.Id,
+                    Id = manager.Id,
                     Date = taskContext.DataItem.Date,
                     Client = taskContext.DataItem.Client,
                     Product = taskContext.DataItem.Product,
@@ -78,15 +78,15 @@ namespace Task4.BL.Custom
                 saleRepository.Save();
 
                 context.Database.Connection.Close();
-            //}
-            //catch (Exception e)
-            //{
-            //    throw new InvalidOperationException("Task failed", e);
-            //}
-            //finally
-            //{
-            //    context.Dispose();
-            //}
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException("Task failed", e);
+            }
+            finally
+            {
+                context.Dispose();
+            }
         }
     }
 }

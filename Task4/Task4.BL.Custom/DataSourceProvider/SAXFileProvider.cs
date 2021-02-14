@@ -33,7 +33,7 @@ namespace Task4.BL.Custom.DataSourceProviders
                 SearchPattern,
                 SearchOption.TopDirectoryOnly))
             {
-                OnNew(this, new CsvDTOParser(c, this.DestFolder));
+                OnNew(this, new CsvParser(c, this.DestFolder));
                 if (_isCancelled)
                 {
                     break;

@@ -1,5 +1,5 @@
 ﻿using Task4.BL.Custom.DataContext.Configurations;
-using Task4.Model.Models;
+using Task4.DAL.Models;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Configuration;

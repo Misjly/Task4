@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-namespace Task4.Model.Models
+namespace Task4.DAL.Models
 {
     public class Manager
     {
@@ -9,7 +8,6 @@ namespace Task4.Model.Models
         {
             Sales = new HashSet<Sale>();
         }
-       // [Key]
         public int Id { get; set; }
         public string SecondName { get; set; }
         public virtual ICollection<Sale> Sales { get; set; }

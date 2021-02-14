@@ -41,8 +41,8 @@ namespace Task4.Domain.Strategies
 
         public virtual void Execute(TLogicTaskContext taskContext)
         {
-            //try
-            //{
+            try
+            {
                 OnTaskStarting(this, taskContext);
                 foreach (var dto in taskContext.DataSource)
                 {
@@ -50,20 +50,20 @@ namespace Task4.Domain.Strategies
                     DataItemHandler?.Invoke(this, taskContext);
                 }
                 OnTaskCompleted(this, taskContext);
-            //}
-            //catch (TaskCanceledException)
-            //{
-            //    OnTaskCancelled(this, taskContext);
-            //}
-            //catch (Exception e)
-            //{
-            //    taskContext.Exception = e;
-            //    OnTaskFaulted(this, taskContext);
-            //}
-            //finally
-            //{
-            //    taskContext.DataSource?.Dispose();
-            //}
+            }
+            catch (TaskCanceledException)
+            {
+                OnTaskCancelled(this, taskContext);
+            }
+            catch (Exception e)
+            {
+                taskContext.Exception = e;
+                OnTaskFaulted(this, taskContext);
+            }
+            finally
+            {
+                taskContext.DataSource?.Dispose();
+            }
         }
 
         protected void UnbindAllEvents()

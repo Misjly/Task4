@@ -1,7 +1,7 @@
 ﻿using Task4.DAL.Contexts;
 using Task4.DAL.Repositories;
 using Task4.DAL.Repositories.Factories;
-using Task4.Model.Models;
+using Task4.DAL.Models;
 using System;
 using System.Collections.Generic;
 

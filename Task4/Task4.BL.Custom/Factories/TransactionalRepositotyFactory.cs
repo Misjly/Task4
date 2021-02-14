@@ -1,7 +1,7 @@
 ﻿using Task4.DAL.Contexts;
 using Task4.DAL.Repositories;
 using Task4.DAL.Repositories.Factories;
-using Task4.Model.Models;
+using Task4.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,7 +16,7 @@ namespace Task4.BL.Custom.Factories
         public TransactionalRepositotyFactory()
         {
             _container = new Dictionary<Type, Type>();
-            Register<Manager, ConcurentAddGenericRepositoty<Manager>>();
+            Register<Manager, GenericRepository<Manager>>();
             Register<Sale, GenericRepository<Sale>>();
         }
 

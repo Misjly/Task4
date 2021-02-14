@@ -1,4 +1,4 @@
-﻿using Task4.Model.Models;
+﻿using Task4.DAL.Models;
 using System.Data.Entity.ModelConfiguration;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -28,11 +28,6 @@ namespace Task4.BL.Custom.DataContext.Configurations
                 .Property(x => x.Cost)
                 .HasColumnType("money")
                 .IsRequired();
-            //this
-            //    .Property(x => x.Manager.SecondName)
-            //    .HasColumnType("varchar")
-            //    .HasMaxLength(50)
-            //    .IsRequired();
         }
     }
 }

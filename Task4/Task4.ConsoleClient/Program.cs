@@ -3,6 +3,7 @@ using Task4.BL.Custom.DataSourceProviders;
 using System.Data.Entity;
 using Task4.BL.Custom;
 using Task4.Domain.Strategies;
+using System;
 
 namespace Task4.ConsoleClient
 {
@@ -19,11 +20,13 @@ namespace Task4.ConsoleClient
 
             GenericProcessStrategy<CsvDTO, CustomLogicTaskContext> handler = builder.Build();
 
-            handler.DataSourceProvider = new SAXFileProvider();
+            handler.DataSourceProvider = new WatcherFileProvider();
 
             try
             {
                 handler.Start();
+                Console.WriteLine("Add files");
+                Console.ReadKey();
                 handler.Stop();
             }
             finally

@@ -1,6 +1,5 @@
 ﻿using Task4.Domain.Transactions;
 using System.Transactions;
-using System;
 
 namespace Task4.BL.Custom.Factories
 {
@@ -8,9 +7,8 @@ namespace Task4.BL.Custom.Factories
     {
         public TransactionScope Create(TransactionScopeOption? scopeOption = null, IsolationLevel? isolation = null)
         {
-            TransactionScope transactionScope = new TransactionScope();
-                transactionScope = new TransactionScope(
-                   scopeOption ?? TransactionScopeOption.RequiresNew,
+                var transactionScope = new TransactionScope(
+                   scopeOption ?? TransactionScopeOption.Required,
                    new TransactionOptions { IsolationLevel = isolation ?? IsolationLevel.ReadCommitted },
                    TransactionScopeAsyncFlowOption.Enabled);
             return transactionScope;

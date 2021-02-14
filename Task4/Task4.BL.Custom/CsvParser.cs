@@ -3,18 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Task4.Model.Models;
+using Task4.DAL.Models;
 using Task4.Domain.CSVParsing;
 
 namespace Task4.BL.Custom
 {
-    public class CsvDTOParser : IDataSource<CsvDTO>, IBackupable
+    public class CsvParser : IDataSource<CsvDTO>, IBackupable
     {
         StreamReader Reader { get; set; }
         string _fileName;
         string _backupFolder;
         private Manager _manager { get; set; }
-        public CsvDTOParser(string fileName, string backupFolder)
+        public CsvParser(string fileName, string backupFolder)
         {
             var items = fileName.Split(new char[] { '_', '\\' });
             _manager = new Manager();
@@ -80,7 +80,7 @@ namespace Task4.BL.Custom
             Reader?.Close();
         }
 
-        ~CsvDTOParser()
+        ~CsvParser()
         {
             Dispose();
         }

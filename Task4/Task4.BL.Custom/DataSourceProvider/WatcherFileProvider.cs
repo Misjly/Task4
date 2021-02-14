@@ -13,7 +13,7 @@ namespace Task4.BL.Custom.DataSourceProviders
         {
             Watcher = new FileSystemWatcher();
             Watcher.Path = SourceFolder;
-            Watcher.Filter = this.SearchPattern;
+            Watcher.Filter = SearchPattern;
             Watcher.Created += OnFileSystemEvent;
         }
 
@@ -43,19 +43,9 @@ namespace Task4.BL.Custom.DataSourceProviders
             }
         }
 
-        ~WatcherFileProvider()
-        {
-            Dispose();
-        }
-
         protected void OnFileSystemEvent(object sender, FileSystemEventArgs e)
         {
-            OnNew(this, new CsvDTOParser(e.FullPath, this.DestFolder));
-        }
-
-        public void Cancel()
-        {
-            Stop();
+            OnNew(this, new CsvParser(e.FullPath, this.DestFolder));
         }
     }
 }

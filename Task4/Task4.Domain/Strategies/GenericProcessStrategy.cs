@@ -140,16 +140,6 @@ namespace Task4.Domain.Strategies
                 TaskHandler.WaitAll();
             }
         }
-        public void Cancel()
-        {
-            if (DataSourceProvider != null && _isRunning)
-            {
-                DataSourceProvider.New -= OnNewDataSourceHandler;
-                DataSourceProvider.Cancel();
-                Wait();
-                _isRunning = false;
-            }
-        }
         #endregion
 
 

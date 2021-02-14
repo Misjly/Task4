@@ -1,6 +1,6 @@
 ﻿using Task4.Domain.Absractions;
 using Task4.DAL.Repositories;
-using Task4.Model.Models;
+using Task4.DAL.Models;
 using System;
 using System.Transactions;
 
@@ -30,25 +30,25 @@ namespace Task4.BL.Custom.Operations
 
         public void Execute()
         {
-            //try
-            //{
+            try
+            {
                 if (ManagerRepository.SingleOrDefault(x => x.SecondName == Manager.SecondName) == null)
                 {
                     ManagerRepository.Add(Manager);
                     ManagerRepository.Save();
                 }
                 Scope.Complete();
-            //}
-            //catch (NullReferenceException e)
-            //{
-            //    Rollback();
-            //    throw e;
-            //}
-            //catch (TransactionException e)
-            //{
-            //    Rollback();
-            //    throw new InvalidOperationException("Adding manager failed", e);
-            //}
+            }
+            catch (NullReferenceException e)
+            {
+                Rollback();
+                throw e;
+            }
+            catch (TransactionException e)
+            {
+                Rollback();
+                throw new InvalidOperationException("Adding manager failed", e);
+            }
         }
         public void Rollback()
         {
