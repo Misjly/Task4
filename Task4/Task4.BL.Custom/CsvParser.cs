@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using Task4.DAL.Models;
@@ -39,7 +40,7 @@ namespace Task4.BL.Custom
                     Date = DateTime.ParseExact(items[0], "ddMMyyyy", null),
                     Client = items[1],
                     Product = items[2],
-                    Cost = int.Parse(items[3]),
+                    Cost = Convert.ToDecimal(items[3], new CultureInfo("en-US")),
                     SecondName = _manager.SecondName
                 };
             }

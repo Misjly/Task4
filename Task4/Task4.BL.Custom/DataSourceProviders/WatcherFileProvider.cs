@@ -17,6 +17,16 @@ namespace Task4.BL.Custom.DataSourceProviders
             Watcher.Created += OnFileSystemEvent;
         }
 
+        public WatcherFileProvider(FileSystemWatcher fileSystemWatcher)
+            : base()
+        {
+            Watcher = fileSystemWatcher;
+            Watcher.Path = SourceFolder;
+            Watcher.Filter = SearchPattern;
+            Watcher.Created += OnFileSystemEvent;
+        }
+
+
         public void Start()
         {
             if (Watcher != null)

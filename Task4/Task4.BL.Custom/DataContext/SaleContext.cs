@@ -21,8 +21,11 @@ namespace Task4.BL.Custom.DataContext
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SaleContext, Migrations.Configuration>());
         }
 
-        public SaleContext() : base("Task4Database")
+        public SaleContext() : base()
         {
+            //Configuration conf = ConfigurationManager.OpenExeConfiguration(@"C:\Users\nikita\source\repos\workspace\Task4\Task4\Task4.ServiceClient\bin\Debug\Task4.ServiceClient.exe");
+            //string databaseName = conf.AppSettings.Settings["Task4Database"].Value;
+            //new DbContext(databaseName);
             Initialize();
         }
 
