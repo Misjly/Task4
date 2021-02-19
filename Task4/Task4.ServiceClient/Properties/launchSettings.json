@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "Task4.ServiceClient": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

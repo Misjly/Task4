@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.DAL", "Task4.DAL\Task
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task4.Domain", "Task4.Domain\Task4.Domain.csproj", "{DFF617CD-59F9-4E4B-8182-F0982BB537A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.ServiceClient", "Task4.ServiceClient\Task4.ServiceClient.csproj", "{19DB37FB-7B71-44AE-8BD9-D3F9B2592CCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.ServiceClient", "Task4.ServiceClient\Task4.ServiceClient.csproj", "{4A15A47F-76C1-48DF-AFE4-AD05C1BF3135}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{DFF617CD-59F9-4E4B-8182-F0982BB537A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFF617CD-59F9-4E4B-8182-F0982BB537A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFF617CD-59F9-4E4B-8182-F0982BB537A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19DB37FB-7B71-44AE-8BD9-D3F9B2592CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19DB37FB-7B71-44AE-8BD9-D3F9B2592CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19DB37FB-7B71-44AE-8BD9-D3F9B2592CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19DB37FB-7B71-44AE-8BD9-D3F9B2592CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A15A47F-76C1-48DF-AFE4-AD05C1BF3135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A15A47F-76C1-48DF-AFE4-AD05C1BF3135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A15A47F-76C1-48DF-AFE4-AD05C1BF3135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A15A47F-76C1-48DF-AFE4-AD05C1BF3135}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
