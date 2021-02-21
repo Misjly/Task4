@@ -5,7 +5,7 @@
     <UserSecretsId>dotnet-Task4.ServiceClient-B4269FFF-2473-4AB4-9BE2-116FA8FA1891</UserSecretsId>
     <StartupObject>Task4.ServiceClient.Program</StartupObject>
     <ApplicationIcon />
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>

@@ -4,6 +4,7 @@ using System.Data.Entity;
 using Task4.BL.Custom;
 using Task4.Domain.Strategies;
 using System;
+using System.Diagnostics;
 
 namespace Task4.ConsoleClient
 {
@@ -11,6 +12,7 @@ namespace Task4.ConsoleClient
     {
         static void Main(string[] args)
         {
+            Debugger.Launch();
             using (DbContext context = new SaleContext())
             {
                 context.Database.CreateIfNotExists();
