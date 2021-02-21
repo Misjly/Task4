@@ -1,10 +1,11 @@
 ﻿using Task4.BL.Custom.DataContext;
-using Task4.BL.Custom.DataSourceProviders;
 using System.Data.Entity;
 using Task4.BL.Custom;
 using Task4.Domain.Strategies;
 using System;
 using System.Diagnostics;
+using Task4.DAL.Csv;
+using Task4.DAL.DataSourceProviders;
 
 namespace Task4.ConsoleClient
 {
@@ -20,7 +21,7 @@ namespace Task4.ConsoleClient
 
             var builder = new ConloseMessageBuilder();
 
-            GenericProcessStrategy<CsvDTO, CustomLogicTaskContext> handler = builder.Build();
+            GenericProcessStrategy<CSVDTO, CustomLogicTaskContext> handler = builder.Build();
 
             handler.DataSourceProvider = new WatcherFileProvider();
 

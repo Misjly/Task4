@@ -12,7 +12,7 @@ namespace Task4.BL.Custom.Migrations
             ContextKey = "SaleContext";
         }
 
-        protected override void Seed(Task4.BL.Custom.DataContext.SaleContext context)
+        protected override void Seed(SaleContext context)
         {
             base.Seed(context);
             //  This method will be called after migrating to the latest version.

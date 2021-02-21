@@ -7,15 +7,15 @@ using System.Linq;
 using Task4.DAL.Models;
 using Task4.Domain.CSVParsing;
 
-namespace Task4.BL.Custom
+namespace Task4.DAL.Csv
 {
-    public class CsvParser : IDataSource<CsvDTO>, IBackupable
+    public class CSVParser : IDataSource<CSVDTO>, IBackupable
     {
         StreamReader Reader { get; set; }
         string _fileName;
         string _backupFolder;
         private Manager _manager { get; set; }
-        public CsvParser(string fileName, string backupFolder)
+        public CSVParser(string fileName, string backupFolder)
         {
             var items = fileName.Split(new char[] { '_', '\\' });
             _manager = new Manager();
@@ -25,7 +25,7 @@ namespace Task4.BL.Custom
             Reader = new StreamReader(fileName);
         }
 
-        public IEnumerator<CsvDTO> GetEnumerator()
+        public IEnumerator<CSVDTO> GetEnumerator()
         {
             while (Reader != null && !Reader.EndOfStream)
             {
@@ -35,7 +35,7 @@ namespace Task4.BL.Custom
                     .Select(x => x.Trim())
                     .ToArray();
 
-                yield return new CsvDTO()
+                yield return new CSVDTO()
                 {
                     Date = DateTime.ParseExact(items[0], "ddMMyyyy", null),
                     Client = items[1],
@@ -81,7 +81,7 @@ namespace Task4.BL.Custom
             Reader?.Close();
         }
 
-        ~CsvParser()
+        ~CSVParser()
         {
             Dispose();
         }

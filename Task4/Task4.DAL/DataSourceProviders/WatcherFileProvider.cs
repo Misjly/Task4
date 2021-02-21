@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
+using Task4.DAL.Csv;
 using Task4.Domain.Absractions;
 using Task4.Domain.FileProviders;
 
-namespace Task4.BL.Custom.DataSourceProviders
+namespace Task4.DAL.DataSourceProviders
 {
-    public class WatcherFileProvider : BaseFileProvider<CsvDTO>, IDataSourceProvider<CsvDTO>, IProcessHandler, IDisposable
+    public class WatcherFileProvider : BaseFileProvider<CSVDTO>, IDataSourceProvider<CSVDTO>, IProcessHandler, IDisposable
     {
         protected FileSystemWatcher Watcher { get; set; }
         public WatcherFileProvider()
@@ -57,7 +56,7 @@ namespace Task4.BL.Custom.DataSourceProviders
 
         protected void OnFileSystemEvent(object sender, FileSystemEventArgs e)
         {
-            OnNew(this, new CsvParser(e.FullPath, this.DestFolder));
+            OnNew(this, new CSVParser(e.FullPath, this.DestFolder));
         }
     }
 }

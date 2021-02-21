@@ -8,6 +8,7 @@ using Task4.DAL.Contexts;
 using Task4.DAL.Repositories.Factories;
 using System.Collections.Concurrent;
 using System.Threading.Tasks;
+using Task4.DAL.Csv;
 
 namespace Task4.BL.Custom.Builders
 {
@@ -16,9 +17,9 @@ namespace Task4.BL.Custom.Builders
         protected ILogicTaskHandler LogicTaskHandler { get; set; }
         protected IDbContextFactory DbContextFactory { get; set; }
         protected IRepositoryFactory RepositoryFactory { get; set; }
-        protected ILogicTaskContextFactory<CustomLogicTaskContext, CsvDTO> TaskContextFactory { get; set; }
-        protected ILogicTaskStrategyFactory<CsvDTO, CustomLogicTaskContext> TaskStrategyFactory { get; set; }
-        protected GenericProcessStrategy<CsvDTO, CustomLogicTaskContext> ProcessStrategy { get; set; }
+        protected ILogicTaskContextFactory<CustomLogicTaskContext, CSVDTO> TaskContextFactory { get; set; }
+        protected ILogicTaskStrategyFactory<CSVDTO, CustomLogicTaskContext> TaskStrategyFactory { get; set; }
+        protected GenericProcessStrategy<CSVDTO, CustomLogicTaskContext> ProcessStrategy { get; set; }
 
         protected virtual void Building()
         {
@@ -30,7 +31,7 @@ namespace Task4.BL.Custom.Builders
             BuildProcessStrategy();
         }
 
-        public GenericProcessStrategy<CsvDTO, CustomLogicTaskContext> Build()
+        public GenericProcessStrategy<CSVDTO, CustomLogicTaskContext> Build()
         {
             Building();
             return ProcessStrategy;
@@ -77,7 +78,7 @@ namespace Task4.BL.Custom.Builders
 
         protected virtual void BuildProcessStrategy()
         {
-            ProcessStrategy = new GenericProcessStrategy<CsvDTO, CustomLogicTaskContext>
+            ProcessStrategy = new GenericProcessStrategy<CSVDTO, CustomLogicTaskContext>
                 (LogicTaskHandler,
                 TaskStrategyFactory,
                 TaskContextFactory);

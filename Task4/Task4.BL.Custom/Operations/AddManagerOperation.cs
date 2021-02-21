@@ -14,10 +14,7 @@ namespace Task4.BL.Custom.Operations
 
         protected TransactionScope Scope { get; set; }
 
-        public AddManagerOperation(
-            IGenericRepository<Manager> userRepository,
-            TransactionScope scope
-            )
+        public AddManagerOperation(IGenericRepository<Manager> userRepository, TransactionScope scope)
         {
             ManagerRepository = userRepository;
             Scope = scope;

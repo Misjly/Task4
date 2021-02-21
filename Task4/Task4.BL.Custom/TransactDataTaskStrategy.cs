@@ -7,11 +7,11 @@ using Task4.DAL.Repositories.Factories;
 using Task4.DAL.Models;
 using System;
 using System.Data.Entity;
-using System.Diagnostics;
+using Task4.DAL.Csv;
 
 namespace Task4.BL.Custom
 {
-    public class TransactDataTaskStrategy : GenericLogicTaskStrategy<CsvDTO, CustomLogicTaskContext>
+    public class TransactDataTaskStrategy : GenericLogicTaskStrategy<CSVDTO, CustomLogicTaskContext>
     {
         protected IDbContextFactory ContextFactory { get; set; }
         protected IRepositoryFactory RepositoryFactory { get; set; }

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Task4.BL.Custom
+namespace Task4.DAL.Csv
 {
-    public class CsvDTO
+    public class CSVDTO
     {
         public DateTime Date { get; set; }
         public string Client { get; set; }
